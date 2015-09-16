@@ -1,0 +1,16 @@
+function palindrome(str) {
+  var re=/(\W+)/g;
+  var re1=/(\_)/g;
+  var i;
+  str=str.replace(re,'');
+  str=str.replace(re1,'');
+  str=str.toLowerCase();
+  if (str.split('').reverse().join('') === str){
+  return true;}
+  else{
+  return false;}
+}
+
+
+
+palindrome("ey e");
