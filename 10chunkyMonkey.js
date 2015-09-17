@@ -1,17 +1,28 @@
 function chunk(arr, size) {
     str=arr.join('');
-    arr=[];
+    arrNew=[];
+    
+    var i = 0;
+    var j = 0;
+    
     while (str.length > size){
         str2=str.slice(0,size);
-        arr.push(str2.split(''));
+        arrNew.push(str2.split(''));
         str=str.slice(size);console.log(str);
     }
+    
     if (str.length <= size){
-        arr.push(str.split(''));
+        arrNew.push(str.split(''));
     }
     
-  // Break it up.
-  return arr;
+    if (!isNaN(arr[0])){
+        for(i = 0; i < arrNew.length; i++){
+            for(j = 0; j < arrNew[i].length; j++)
+                arrNew[i][j]=Number(arrNew[i][j]);
+        }
+    }
+
+  return arrNew;
 }
 
 chunk(["a", "b", "c", "d"], 2, "");
